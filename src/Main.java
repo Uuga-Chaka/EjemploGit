@@ -32,9 +32,9 @@ public class Main extends PApplet {
 
 	public void keyPressed() {
 
-		log.ejercicioUno();
-		// log.ejercicioDos();
-		// log.ejercicioTres();
+		// log.ejercicioUno();
+		 log.ejercicioDos();
+		//log.ejercicioTres();
 	}
 
 }

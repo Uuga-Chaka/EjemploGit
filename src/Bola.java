@@ -1,5 +1,5 @@
 
-public class Bola implements Comparable {
+public class Bola implements Comparable<Bola> {
 
 	int radio;
 
@@ -12,12 +12,6 @@ public class Bola implements Comparable {
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		Bola bolita = (Bola) o;
-		return 0;
-	}
-
-	@Override
 	public boolean equals(Object obj) {
 		Bola bolita = (Bola) obj;
 		if (bolita.getRadio() == radio)
@@ -26,7 +20,13 @@ public class Bola implements Comparable {
 			return false;
 	}
 
+	@Override
 	public int hashCode() {
 		return getRadio();
+	}
+
+	@Override
+	public int compareTo(Bola o) {
+		return (int)(radio-o.getRadio());
 	}
 }

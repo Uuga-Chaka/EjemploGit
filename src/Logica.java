@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.TreeSet;
 
@@ -15,8 +16,7 @@ public class Logica {
 	public void ejercicioUno() {
 		HashSet<Bola> bolas = new HashSet<Bola>();
 		bolas.add(new Bola(10));
-		//int random = (int) app.random(0, 1);
-		
+
 		bolas.add(new Bola(10));
 		bolas.add(new Bola(15));
 		bolas.add(new Bola(20));
@@ -116,23 +116,28 @@ public class Logica {
 
 		if (app.key == '1') {
 			System.out.println("HashSet a TreeSet");
-			for (Bola bola : bolaH) {
-				bolaT.add(bola);
+			bolaT.addAll(bolaH);
+			for (Bola bola : bolaT) {
+//				bolaT.add(bola);
 				System.out.println(bola.radio);
 			}
 			bolaH.clear();
 			System.out.println("bolaT " + bolaT.size());
 			System.out.println("bolaH " + bolaH.size());
 		}
+		
 		if (app.key == '2') {
+
+			bolaH.addAll(bolaT);
+
 			System.out.println("TreeSet a HashSet");
-			for (Bola bola : bolaT) {
-				bolaH.add(bola);
-				System.out.println(bola.radio);
+			System.out.println("size: " + bolaH.size());
+			for (Bola bola2 : bolaH) {
+				System.out.println(bola2.getRadio());
 			}
 			System.out.println("bolaT " + bolaT.size());
 			System.out.println("bolaH " + bolaH.size());
-			bolaH.clear();
+			bolaT.clear();
 		}
 	}
 }
